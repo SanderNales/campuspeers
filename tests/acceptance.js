@@ -26,7 +26,7 @@ async function passConsentAndScreening(page) {
   await click(page, '[data-action=screen-q2]');
 }
 async function pickCourse(page) {
-  await click(page, '[data-action=select-course][data-id=calculus-1b]');
+  await click(page, '[data-action=select-course][data-id=linear-algebra]');
   await click(page, '[data-action=to-help]');
 }
 (async () => {
@@ -64,7 +64,7 @@ async function pickCourse(page) {
 
   /* ---- 3. Guards and screening ---- */
   const g = await newPage();
-  await g.goto(URL + '#/help/calculus-1b');
+  await g.goto(URL + '#/help/linear-algebra');
   check('#/help without consent -> #/consent', (await hash(g)) === '#/consent');
   await g.goto(URL + '#/questions');
   check('#/questions without consent -> #/consent', (await hash(g)) === '#/consent');
@@ -87,7 +87,7 @@ async function pickCourse(page) {
   /* ---- 5. Paid flow in A (+ endpoint sync) ---- */
   const posts = [];
   await A.page.route('https://example.invalid/collect', (route) => { posts.push(JSON.parse(route.request().postData())); route.fulfill({ status: 200, body: 'ok' }); });
-  await A.page.goto(URL + '#/help/calculus-1b');
+  await A.page.goto(URL + '#/help/linear-algebra');
   await A.page.evaluate(() => { CONFIG.trackEndpoint = 'https://example.invalid/collect'; CONFIG.trackToken = 'test-token'; });
   await click(A.page, '[data-action=choose-option][data-id=peer-tutor]');
   check('paid card -> #/pilot', (await hash(A.page)) === '#/pilot');
@@ -116,7 +116,7 @@ async function pickCourse(page) {
   const { loadScript } = require('./appscript-lib');
   const sheet = loadScript({ token: 'test-token' });
   check('real client payloads pass the Apps Script validation', posts.every((p) => sheet.post(p) === 'ok') && sheet.rows.length === 2, sheet.rows.length);
-  await A.page.goto(URL + '#/help/calculus-1b');
+  await A.page.goto(URL + '#/help/linear-algebra');
   check('finished respondent cannot restart', (await hash(A.page)) === '#/debrief');
 
   /* ---- 5b. A failing endpoint never breaks the survey ---- */

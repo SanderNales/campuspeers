@@ -20,9 +20,9 @@ One repo, one copy of the app. `a/` and `b/` only contain a tiny redirect to the
 
 | Link | Shows | Help screen |
 |---|---|---|
-| `https://<USERNAME>.github.io/<REPO>/a/` | **Version A** | 3 free options + 1 paid peer-tutor card |
-| `https://<USERNAME>.github.io/<REPO>/b/` | **Version B** | the same 3 free options only |
-| `https://<USERNAME>.github.io/<REPO>/` | random 50/50 | A or B |
+| `https://SanderNales.github.io/campuspeers/a/` | **Version A** | 3 free options + 1 paid peer-tutor card |
+| `https://SanderNales.github.io/campuspeers/b/` | **Version B** | the same 3 free options only |
+| `https://SanderNales.github.io/campuspeers/` | random 50/50 | A or B |
 
 `…/?v=a` and `…/?v=b` on the root also work. Copy-paste list: [docs/LINKS.md](docs/LINKS.md).
 The assignment is locked once a respondent has passed the consent screen, so opening the other link later changes nothing.
@@ -33,7 +33,7 @@ Before consent a later link may still set the version (nobody has started yet).
 1. Push this repo to GitHub (public repo, so free Pages works; see the Data section: the repo must never contain data).
 2. **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main` / folder `/ (root)` → Save.**
    No GitHub Actions needed. `.nojekyll` (repo root) makes Pages serve the files as they are.
-3. Wait 1–2 minutes. The URL appears at the top of the Pages settings: `https://<USERNAME>.github.io/<REPO>/`.
+3. Wait 1–2 minutes. The URL appears at the top of the Pages settings: `https://SanderNales.github.io/campuspeers/`.
 
 ### Check a deploy
 
@@ -121,17 +121,18 @@ a warning when fewer than 15 completed per version. Exports: respondents (one ro
 | `a/index.html`, `b/index.html` | Short links: redirect to `../?v=a` / `../?v=b` (no app code here) |
 | `docs/` | `apps-script.md` (collection endpoint), `LINKS.md` (links for slides) |
 | `tests/` | Dev-only checks: `node tests/appscript.test.js` (no deps); `acceptance.js` and `hosting.js` need `npm i playwright` |
-| `scripts/make-qr.py` | Dev-only QR codes: `pip install qrcode pillow`, then `python scripts/make-qr.py https://<USERNAME>.github.io/<REPO>/` → `qr/` (git-ignored) |
+| `scripts/make-qr.py` | Dev-only QR codes: `pip install qrcode pillow`, then `python scripts/make-qr.py https://SanderNales.github.io/campuspeers/` → `qr/` (git-ignored) |
 
 ## TODO before launch
 
 Everything below is a placeholder and shows up literally in the app until filled in:
 
 - [ ] Office hour and study group times per course (`js/data.js`, `[TODO: …]`)
-- [ ] `[UNIVERSITY]`, `[STORAGE]`, `[DATE]`, `[NAME + EMAIL]` in `js/copy.js`
+- [x] `[UNIVERSITY]`, `[STORAGE]`, `[DATE]`, `[NAME + EMAIL]` in `js/copy.js` (done; storage = private Google Sheet, then moved to VU OneDrive)
+- [ ] After the study: download the Sheet as `.xlsx`, move it to VU OneDrive, delete the Google Sheet (as promised in the consent text)
 - [ ] SMART thresholds X (`minPaidTapPct`), Y (`minEmailPct`), deadline and `minPerVersion` in `CONFIG.smart`
 - [ ] `CONFIG.trackEndpoint` and optional `CONFIG.trackToken` (see docs/apps-script.md; the token is not a secret)
-- [ ] `<USERNAME>` and `<REPO>` in the links above
+- [ ] `SanderNales` and `campuspeers` in the links above
 - [ ] Have the consent and debrief texts checked by your course teachers / ethics requirements
 
 The tutor shown in A ("Lisa V.") is a fictional example.

@@ -15,7 +15,7 @@ async function toHelp(page) {
   await page.check('#consent-box'); await page.click('#consent-btn');
   await page.check('input[name=q1][value=yes]'); await page.click('[data-action=screen-q1]');
   await page.fill('#programme', 'CS'); await page.selectOption('#year', 'Master'); await page.click('[data-action=screen-q2]');
-  await page.click('[data-action=select-course][data-id=calculus-1b]'); await page.click('[data-action=to-help]');
+  await page.click('[data-action=select-course][data-id=linear-algebra]'); await page.click('[data-action=to-help]');
   return page.$$eval('.card.opt', (e) => e.length);
 }
 const variantOf = (page) => page.evaluate(() => JSON.parse(localStorage.getItem('cp2_responses'))[JSON.parse(localStorage.getItem('cp2_current'))].variant);

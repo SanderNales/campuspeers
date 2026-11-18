@@ -18,21 +18,15 @@ var CONFIG = {
   smart: {
     minPaidTapPct: null,     // X: % of group A that tap "Book & pay"
     minEmailPct: null,       // Y: % of group A that leave an email on the pilot screen
-    deadline: '[TODO DATE]', // by when
+    deadline: '22 November 2026', // by when
     minPerVersion: 15        // TODO: confirm sample size per version (the results page warns below this)
   }
 };
 
 /* Courses. officeHours / studyGroup are real times that must be filled in per course (identical in A and B). */
 var COURSES = [
-  { id: 'calculus-1b', name: 'Calculus 1B', topics: 'Integrals, series',
-    officeHours: '[TODO: office hour day + time]', studyGroup: '[TODO: study group day + time]' },
   { id: 'linear-algebra', name: 'Linear Algebra', topics: 'Eigenvalues, vector spaces',
-    officeHours: '[TODO: office hour day + time]', studyGroup: '[TODO: study group day + time]' },
-  { id: 'prob-stat', name: 'Probability & Statistics', topics: 'Distributions, hypothesis tests',
-    officeHours: '[TODO: office hour day + time]', studyGroup: '[TODO: study group day + time]' },
-  { id: 'python', name: 'Programming in Python', topics: 'Assignments, debugging',
-    officeHours: '[TODO: office hour day + time]', studyGroup: '[TODO: study group day + time]' }
+    officeHours: 'Tuesdays 13:30–15:30, Room HG4.04', studyGroup: 'Fridays 15:00–17:00' }
 ];
 
 /* The three free options: shown in BOTH versions, same wording, same order.
