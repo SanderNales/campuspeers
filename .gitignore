@@ -1,0 +1,16 @@
+# Respondent data must never be committed
+*.csv
+*.xlsx
+exports/
+data/
+.env
+
+# Dev tooling and output
+node_modules/
+package-lock.json
+qr/
+test-results/
+playwright-report/
+tests/output/
+tests/screenshots/
+screenshot*.png
