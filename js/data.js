@@ -26,7 +26,7 @@ var CONFIG = {
 /* Courses. officeHours / studyGroup are real times that must be filled in per course (identical in A and B). */
 var COURSES = [
   { id: 'linear-algebra', name: 'Linear Algebra', topics: 'Eigenvalues, vector spaces',
-    officeHours: 'Tuesdays 13:30–15:30, Room HG4.04', studyGroup: 'Fridays 15:00–17:00' }
+    officeHours: 'Monday 14:00–16:00, Room HG4.04', studyGroup: 'Wednesday 17:30–19:30' }
 ];
 
 /* The three free options: shown in BOTH versions, same wording, same order.

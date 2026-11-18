@@ -127,7 +127,7 @@ a warning when fewer than 15 completed per version. Exports: respondents (one ro
 
 Everything below is a placeholder and shows up literally in the app until filled in:
 
-- [ ] Office hour and study group times per course (`js/data.js`, `[TODO: …]`)
+- [x] Office hour and study group times per course (`js/data.js`) — sample times added; replace with real times before launch
 - [x] `[UNIVERSITY]`, `[STORAGE]`, `[DATE]`, `[NAME + EMAIL]` in `js/copy.js` (done; storage = private Google Sheet, then moved to VU OneDrive)
 - [ ] After the study: download the Sheet as `.xlsx`, move it to VU OneDrive, delete the Google Sheet (as promised in the consent text)
 - [ ] SMART thresholds X (`minPaidTapPct`), Y (`minEmailPct`), deadline and `minPerVersion` in `CONFIG.smart`
